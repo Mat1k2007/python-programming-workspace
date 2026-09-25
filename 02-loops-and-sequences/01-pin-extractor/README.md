@@ -1,14 +1,15 @@
 # PIN Extractor
 
-A Python module that parses multiline text sequences to dynamically extract numerical PIN codes based on line indices and word lengths.
+A Python module that parses a collection of multiline text blocks (poems) to dynamically extract numerical PIN codes based on word lengths matching positional line indices.
 
 ## Implementation Details
 
 This project strictly relies on foundational Python concepts:
 
-- **Sequence Traversal:** Iterates through collection blocks using standard `for` loops and tracks positional indices via `enumerate()`.
-- **String Tokenization:** Applies `.split('\n')` to isolate line entries and `.split()` to parse individual words into list elements.
-- **Conditional Index Validation:** Evaluates word lengths against line indices using `if/else` logic to generate valid PIN digits dynamically.
+- **Collection & Sequence Traversal:** Iterates over a list of multiline string items using nested `for` loops and tracks positional line indices via `enumerate()`.
+- **String Tokenization:** Utilizes `.split('\n')` to isolate line elements and `.split()` to parse lines into word lists.
+- **Index-Based Boundary Extraction:** Evaluates word availability against current line indices using standard conditional logic (`if/else`) and positional list indexing (`words[line_index]`).
+- **Dynamic Accumulation:** Accumulates stringified word lengths or fallback boundary digits (`'0'`) into a secret code, returning a structured list of extracted PINs.
 
 ## How to Run
 
